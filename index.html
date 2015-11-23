@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>音乐播放器</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/index.css"/>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+	<script type="text/javascript" src="./scripts/index.js"></script>
+</head>
+<body>
+	<audio  controls src='./musics/1.mp3' id='audio'></audio>
+
+	<div class="scene">
+		<div class="divplayer" id='divplayer'>
+			<div class="jian" id="jian">
+				<div class="jianscene">
+
+					<div class="tou">
+						<a href="#" class='tupian'><img style='width:90px;height:90px' src="./images/tou.jpg"/></a>
+					</div>
+					<div class="mmain">
+						<p class='musicname'>
+							<span class='ming' id='ming'>听我想听的歌！</span>
+							<a href="" class='dan'></a>
+						</p>
+						<p class='singername' id='singername'>
+							QQ音乐
+						</p>
+						<p class='play_date' id='play_date'>
+						
+						</p>
+						<div class='music_op' id ='music_op' style='display:none'>
+							<div class='op zuo' title='喜欢'></div>
+							<div class='op zhong' title='分享'></div>
+							<div class='op you' id='mai'>
+								<div class="code" id='code'>
+									<div class="kuang"></div>
+									<div class="sao">手机扫描二维码，唱这首歌</div>
+									<div class="san"></div>
+
+								</div>
+
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="anniu">
+					<span class="shang" id='shang' title='上一首（[）'></span>
+					<span class="play1" id="play"  title='播放（P）'></span>
+					<span class=" shang xia" id='xia' title='下一首（]）'></span>
+					<div class="xunhuan" id="xunhuan"  title='列表循环'>
+					</div>
+					<span class="shengyin" title='音量调节' >
+						<span class='icon' title='点击设为静音（M）' id='jingyin'></span>
+						<span class='voice_jindu' id='voice_jindu' >
+							<span class='voice_bai' id='voice_bai'></span>
+							<span class='dian'  id='dian'></span>
+						</span>
+
+					</span>
+				</div>
+				<div class="fangshi" id="fangshi" style='display:none'>
+					<div class="shun" id="shun" title='顺序播放'></div>
+					<div class="sui" id="sui" title='随机播放'></div>
+					<div class="danqu" id="danqu" title='单曲播放'></div>
+					<div class="liebiao" id="liebiao" title='列表播放'></div>
+				</div>
+				<div class="gequjindu" id='gequjindu'>
+					<div class="player_bg_bar"></div>
+					<div class="download_bar"></div>
+					<div class="player_current_bar" id='player_current_bar'></div>
+					<div class="progress_op" id='progress_op'></div>
+				</div>
+				<div class="time_show" id="time_show" style='display:none'>
+					<div class="xiaosanjiaow" id="xiaosanjiaow"></div>
+					<div class="xiaosanjiao"></div>
+
+				</div>
+			</div>
+			<div class="music_list" id="music_list">
+				<div class="geshu" id='geshu'>0</div>
+			</div>
+			<div class="geci" id="geci"></div>
+			<div class="geci_content" id="geci_content" style="display:none">
+				<div class="citext">
+					<div id='line_null'><span>&nbsp;</span></div>
+					<div id='line_0'><span>爱，很简单 - 陶喆</span></div>
+					<div id='line_1'><span class='current'>词：娃娃</span></div>
+					<div id='line_2'><span class=''>曲：陶喆</span></div>
+					<div id='line_3'><span class=''>......</span></div>
+					<div id='line_2'><span class=''>忘了是怎么开始</span></div>
+					<div id='line_2'><span class=''>......</span></div>
+					<div id='line_2'><span class=''>也许就是对你</span></div>
+					<div id='line_2'><span class=''>......</span></div>
+					<div id='line_2'><span class=''>有一种感觉</span></div>
+					<div id='line_2'><span class=''>......</span></div>
+					<div id='line_2'><span class=''>忽然间发现自己</span></div>
+					<div id='line_2'><span class=''>......</span></div>
+
+				</div>
+				<div class="ci_bg"></div>
+				<div class="close" id="close"></div>
+
+			</div>
+			<div class="button" id="button" title='点击收起'></div>
+			<div class="play_list" id="play_list" style='display:block'>
+				<div class="list_title">
+					<div class="ll tab_yi">
+						播放列表
+						<i></i>
+					</div>
+					<div class="ll tab_er" id='ll tab_er' style='display:none'>
+						单曲电台列表
+						<i></i>
+					</div>
+					<div class='qing' id='qing'>清空列表</div>
+					<div class='but' id="but"></div>
+				</div>
+				<div class="list_con">
+					<div class="listmain" id="listmain">
+						<ul class="singlist" id="singlist">
+						<!-- <li>
+							<span class="sname">我的秘密</span>
+							<span class="gsname">邓紫棋</span>
+							<span class="play_time">04:10</span>
+							<div class="cang">
+								<span class="c_yi"></span>
+								<span class="c_er"></span>
+								<span class="c_san"></span>
+								<span class="c_si"></span>
+
+							</div>
+						</li> -->
+						<!-- <li>
+							<span class="sname">遇见</span>
+							<span class="gsname">孙燕姿</span>
+							<span class="play_time">03:31</span>
+							<div class="cang">
+								<span class="c_yi"></span>
+								<span class="c_er"></span>
+								<span class="c_san"></span>
+								<span class="c_si"></span>
+
+							</div>
+						</li>
+						<li>
+							<span class="sname">恋爱ling</span>
+							<span class="gsname">许嵩</span>
+							<span class="play_time">02:48</span>
+							<div class="cang">
+								<span class="c_yi"></span>
+								<span class="c_er"></span>
+								<span class="c_san"></span>
+								<span class="c_si"></span>
+
+							</div>
+						</li> -->
+
+
+
+						</ul>
+					</div>
+
+					<div class='dan_list'>
+						<div class="si_top">
+							您正在收听以
+							<span class='xi_name'>“他不懂”</span>
+							生成的单曲电台。
+						</div>
+						<div class="xi_list">
+							<ul class='chang'>
+								<li class='pre'>
+									<i class='a_n'></i>
+									<img style='width:200px;height:200px' src="./images/dan_1.jpg">
+
+								</li>
+								<li class='current'>
+									<i class='a_n'></i>
+									<img style='width:200px;height:200px' src="./images/dan_2.jpg">
+								</li>
+								<li class='next'>
+									<i class='a_n'></i>
+									<img style='width:200px;height:200px' src="./images/dan_3.jpg">
+								</li>
+
+							</ul>
+						</div>
+						<div class="info">
+							<div class="inf_l" title='喜欢'></div>
+							<div class="inf_r" title='删除'></div>
+							<div class='in_in'>明天，你好 (《加油吧实习生》电视剧插曲)</div>
+							<div class='in_inx'>Lost & Found去寻找</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		
+
+
+
+		</div>
+		
+
+
+
+	</div>	
+	
+</body>
+
+</html>
